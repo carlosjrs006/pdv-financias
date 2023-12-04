@@ -30,11 +30,13 @@ spring:
   jackson:
     serialization:
       indent-output: true
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/ead-pdv3
+    url: jdbc:postgresql://roundhouse.proxy.rlwy.net:22808/railway
     username: postgres
-    password: carlos123
+    password: 613Cge3DFga635A1AfF*A5A*eb1*EF*D
     hikari:
       poolName: Hikari
       auto-commit: false
@@ -42,10 +44,16 @@ spring:
     # Remove 'faker' if you do not want the sample data to be loaded automatically
     contexts: dev, faker
   mail:
-    host: localhost
-    port: 25
-    username:
-    password:
+    host: smtp.gmail.com
+    port: 587
+    username: carlosjrs06.cj@gmail.com #Replace this field with your Gmail username.
+    password: Cjmaria2740@
+    protocol: smtp
+    tls: true
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true
+      ssl.trust: smtp.gmail.com
   messages:
     cache-duration: PT1S # 1 second, see the ISO 8601 standard
   thymeleaf:

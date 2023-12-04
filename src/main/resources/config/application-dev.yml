@@ -31,7 +31,14 @@ spring:
     serialization:
       indent-output: true
   jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      jdbc:
+        lob.non-contextual-creation: true
+    properties:
+      hibernate:
+        show_sql: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:postgresql://roundhouse.proxy.rlwy.net:22808/railway
